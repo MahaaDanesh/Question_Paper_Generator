@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Subject</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Add New Subject</h1>
+
+    <!-- Success Message -->
+
+    {% with messages = get_flashed_messages() %}
+
+        {% if messages %}
+
+            <div class="success">
+
+                {{ messages[0] }}
+
+            </div>
+
+        {% endif %}
+
+    {% endwith %}
+
+    <form
+        action="/save-subject"
+        method="POST"
+        enctype="multipart/form-data"
+    >
+
+        <label>
+
+            Regulation
+
+        </label>
+
+        <select
+            name="regulation"
+            required
+        >
+
+            <option value="">Select Regulation</option>
+
+            <option value="2021">2021</option>
+
+            <option value="2025">2025</option>
+
+        </select>
+
+        <label>
+
+            Department
+
+        </label>
+
+        <select
+            name="department"
+            required
+        >
+
+            <option value="">Select Department</option>
+
+            <option value="CSE">CSE</option>
+
+            <option value="AIML">AI & ML</option>
+
+        </select>
+
+        <label>
+
+            Subject Code
+
+        </label>
+
+        <input
+            type="text"
+            name="subject_code"
+            placeholder="Example : CS3491"
+            required
+        >
+
+        <label>
+
+            Subject Name
+
+        </label>
+
+        <input
+            type="text"
+            name="subject_name"
+            placeholder="Example : Artificial Intelligence"
+            required
+        >
+
+        <label>
+
+            Upload Syllabus (PDF)
+
+        </label>
+
+        <input
+            type="file"
+            name="syllabus"
+            accept=".pdf"
+            required
+        >
+
+        <label>
+
+            Upload Previous Question Papers
+
+        </label>
+
+        <input
+            type="file"
+            name="previous_papers"
+            accept=".pdf"
+            multiple
+            required
+        >
+
+        <button type="submit">
+
+            Save Subject
+
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/">⬅ Back to Home</a>
+
+</div>
+
+</body>
+
+</html>

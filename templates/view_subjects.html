@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>View Subjects</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>Stored Subjects</h1>
+
+
+<table>
+
+<tr>
+
+<th>Regulation</th>
+
+<th>Department</th>
+
+<th>Subject Code</th>
+
+<th>Subject Name</th>
+
+</tr>
+
+
+{% for subject in subjects %}
+
+<tr>
+
+<td>{{ subject[1] }}</td>
+
+<td>{{ subject[2] }}</td>
+
+<td>{{ subject[3] }}</td>
+
+<td>{{ subject[4] }}</td>
+
+</tr>
+
+{% endfor %}
+
+
+</table>
+
+
+<br>
+
+<a href="/" class="btn">
+⬅ Back to Home
+</a>
+
+
+</div>
+
+
+</body>
+
+</html>

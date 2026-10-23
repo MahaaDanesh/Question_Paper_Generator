@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<h1>{{ message }}</h1>
+
+
+{% if subject %}
+
+<h3>Subject Details</h3>
+
+<p>
+Regulation:
+{{ subject[0] }}
+</p>
+
+<p>
+Department:
+{{ subject[1] }}
+</p>
+
+<p>
+Subject Code:
+{{ subject[2] }}
+</p>
+
+<p>
+Subject Name:
+{{ subject[3] }}
+</p>
+
+
+{% endif %}
+
+
+<br>
+
+<a href="/generate" class="btn">
+Try Again
+</a>
+
+
+<a href="/" class="btn">
+Home
+</a>
+
+
+</div>
+
+</body>
+
+</html>
